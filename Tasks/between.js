@@ -1,19 +1,20 @@
 // Refactor following solution
 // Extract substring between prefix and suffix
 
-// Step 2: Remove unnecessary else statement (also fix another variable naming)
+// Step 3: Improve code readability, fix another naming
 
-getvaluebetween = (string, prefix, suffix) => {
+getValueBetween = (string, prefix, suffix) => {
   prefixIndex = string.indexOf(prefix);
   if (prefixIndex === -1) return "";
-  suffixIndex = prefixIndex + prefix.length;
-  string = string.substring(suffixIndex);
+
+  startIndex = prefixIndex + prefix.length;
+  let result = string.substring(startIndex);
   if (suffix) {
-    prefixIndex = string.indexOf(suffix);
-    if (prefixIndex === -1) return "";
-    string = string.substring(0, prefixIndex);
+    suffixIndex = result.indexOf(suffix);
+    if (suffixIndex === -1) return "";
+    result = result.substring(0, suffixIndex);
   }
-  return string;
+  return result;
 };
 
-module.exports = getvaluebetween;
+module.exports = getValueBetween;
