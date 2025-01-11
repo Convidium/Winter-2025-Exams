@@ -1,21 +1,18 @@
 // Refactor following solution
 // Find an intersection of two dictionaries
 
-// Step 1:
-// change function name to `checkIntersection` (makes much more sense what it's intentions are)
-// change function to labmbda function
-// remove useless curly braces
+// Step 2:
+// change naming to camelCase standart
+// change `if else` logic (the original one had unnecessary operation)
 
-checkIntersection = (object_1, object_2) => {
-  first_keys = Object.keys(object_1);
-  for (attribute_name of first_keys) {
-    if (object_1[attribute_name] === object_2[attribute_name]) {
-      object_2[attribute_name] = object_1[attribute_name];
-    } else {
-      delete object_1[attribute_name];
+checkIntersection = (object1, object2) => {
+  firstKeys = Object.keys(object1);
+  for (attributName of firstKeys) {
+    if (object1[attributName] !== object2[attributName]) {
+      delete object1[attributName];
     }
   }
-  return object_1;
+  return object1;
 };
 
 module.exports = checkIntersection;
