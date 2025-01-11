@@ -1,18 +1,18 @@
 // Refactor following solution
 // Find an intersection of two dictionaries
 
-// Step 2:
-// change naming to camelCase standart
-// change `if else` logic (the original one had unnecessary operation)
+// Step 3:
+// Remove object mutation
 
 checkIntersection = (object1, object2) => {
   firstKeys = Object.keys(object1);
+  const result = {};
   for (attributName of firstKeys) {
-    if (object1[attributName] !== object2[attributName]) {
-      delete object1[attributName];
+    if (object1[attributName] === object2[attributName]) {
+      result[attributName] = object1[attributName];
     }
   }
-  return object1;
+  return result;
 };
 
 module.exports = checkIntersection;
