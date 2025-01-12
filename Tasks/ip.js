@@ -1,24 +1,23 @@
 // Refactor following solution
 // Split string by the first occurrence of separator
 
-// Step 1:
-// fix function naming to camelCase
-// change variable namings for better readability
+// Step 2:
+// improve `if else` logic
+// add `const` and `let`
+// add spacing between blocks of code
 
-Parseip = (ip) => {
-  parsedIP = [];
-  if (ip === '') return;
-  else {
-    arrayIP = ip.split('.');
-    if (arrayIP.length != 4) return;
-    i = 0;
-    for (const num of arrayIP) {
-      parsedIP[i] = parseInt(num);
-      if (isNaN(parsedIP[i])) return;
-      i++;
-    }
+parseIP = (ip) => {
+  const parsedIP = [];
+  const arrayIP = ip.split(".");
+  if (arrayIP.length !== 4) return;
+
+  let i = 0;
+  for (const num of arrayIP) {
+    parsedIP[i] = parseInt(num);
+    if (isNaN(parsedIP[i])) return;
+    i++;
   }
   return parsedIP;
 };
 
-module.exports = Parseip;
+module.exports = parseIP;
