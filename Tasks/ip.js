@@ -1,10 +1,10 @@
 // Refactor following solution
 // Split string by the first occurrence of separator
 
-// Step 3:
-// replace manual `i` incrementation and `for` loop with `.map()` method
+// Step 4:
+// add `const` to the function declaration
 
-parseIP = (ip) => {
+const parseIP = (ip) => {
   const arrayIP = ip.split(".");
   if (arrayIP.length !== 4) return;
 
