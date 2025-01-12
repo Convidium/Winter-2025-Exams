@@ -1,10 +1,9 @@
 // Refactor following solution
 // Get month number
 
-// Step 1:
-// change variable namings
-// change function naming
-// Add `const`
+// Step 2:
+// change incoming parameter name
+// add anotehr `const`
 
 const months = [
   'jan',
@@ -21,10 +20,10 @@ const months = [
   'dec',
 ];
 
-const getMonthNumber = (s) => {
-  monthsCount = months.length;
+const getMonthNumber = (month) => {
+  const monthsCount = months.length;
   for (let i = 0; i < monthsCount; i++) {
-    if (s.toLowerCase().startsWith(months[i])) return i + 1;
+    if (month.toLowerCase().startsWith(months[i])) return i + 1;
   }
   return -1;
 };
