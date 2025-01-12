@@ -1,13 +1,14 @@
 // Refactor following solution
 // Shuffle an array
 
-// Step 2:
-// No need to use `rest` in parameters. Better to create a `arr` as a copy `list` to avoid incoming data mutation
-// remove useless curly braces
+// Step 3:
+// Put hardcoded value `0.5` into a variable
+// the randomness of the shuffle could be improved, but I'm not sure if it's what I have to do?
 
 const shuffleList = (list) => {
   const arr = [...list];
-  arr.sort(() => Math.random() - 0.5);
+  const randomCoefficient = 0.7;
+  arr.sort(() => Math.random() - randomCoefficient);
   return arr;
 };
 
