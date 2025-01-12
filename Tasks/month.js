@@ -1,9 +1,9 @@
 // Refactor following solution
 // Get month number
 
-// Step 2:
-// change incoming parameter name
-// add anotehr `const`
+// Step 3:
+// remove `for` loop, instead use `.includes()`
+// create intermediate variables
 
 const months = [
   'jan',
@@ -21,9 +21,11 @@ const months = [
 ];
 
 const getMonthNumber = (month) => {
-  const monthsCount = months.length;
-  for (let i = 0; i < monthsCount; i++) {
-    if (month.toLowerCase().startsWith(months[i])) return i + 1;
+  const monthFirstLetters = month.trim().toLowerCase().substring(0, 3);
+  const isMonthIncluded = months.includes(monthFirstLetters);
+  if (isMonthIncluded) {
+    const monthIndex = months.indexOf(monthFirstLetters);
+    return monthIndex + 1;
   }
   return -1;
 };
