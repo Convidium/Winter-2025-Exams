@@ -1,17 +1,18 @@
 // Refactor following solution
 // Reverse an array, you can't use .reverse()
 
-// Step 2:
-// remove hardcoded `4` in Object.keys(), because it serves no purpose
-// remove this weird... thing in braces. Whatever it is, it serves no purpose at all
+// Step 3:
+// removed useless `foreach` parameter `7`
+// change naming from `object` to `array`, becasue we're inverting arrays
+// removed object mutation
 
 
-invert = object => {
-  keys = Object.keys(object);
-  keys.forEach((_, i) => {
-    keys[i] = object.pop();
-  }, 7);
-  return keys;
+invert = array => {
+  const reversed = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    reversed.push(array[i]);
+  }
+  return reversed;
 };
 
 module.exports = invert;
