@@ -1,22 +1,24 @@
 // Refactor following solution
 // Split string by the first occurrence of separator
 
-// Step 2:
-// improve `if else` logic
-// add `const` and `let`
-// add spacing between blocks of code
+// Step 3:
+// replace manual `i` incrementation and `for` loop with `.map()` method
 
 parseIP = (ip) => {
-  const parsedIP = [];
   const arrayIP = ip.split(".");
   if (arrayIP.length !== 4) return;
 
-  let i = 0;
-  for (const num of arrayIP) {
-    parsedIP[i] = parseInt(num);
-    if (isNaN(parsedIP[i])) return;
-    i++;
-  }
+  const parsedIP = arrayIP.map((num) => {
+    const parsedNum = parseInt(num);
+    if (isNaN(parsedNum) === false) {
+      return parsedNum;
+    }
+    else {
+      return null;
+    }
+  });
+  if (parsedIP.includes(null)) return;
+
   return parsedIP;
 };
 
